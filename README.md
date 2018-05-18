@@ -151,8 +151,6 @@ https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
 *Question: Is there a way to check and make sure you're properly connecting over Tor so you don't accidentally shoot yourself in the foot?*
 
-*Question: Is there a special command that needs to be entered so that Zcash and Tor continue to run on the server even after closing the Terminal window?*
-
 **ACKNOWLEDGEMENTS**
 
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
