@@ -12,6 +12,8 @@ There are two open bounties to solve issues in this repo:
 
 - https://github.com/durbanpoison/zcash-tor/issues/3
 
+Note: Bounties will only be paid out to z-addresses.
+
 # Installing and running Zcash over Tor on a Debian server.
 
 Open Terminal, SSH into your Debian server, and follow these instructions.
