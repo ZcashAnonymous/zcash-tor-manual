@@ -2,7 +2,7 @@
 
 Open an issue to report an error and submit a pull request to close an open issue.
 
-All contributions are made under The Unlicense. See LICENSE.md in this repository.
+All contributions are made under The Unlicense. See the LICENSE file in this repository.
 
 # Installing and running Zcash over Tor on a Debian server.
 
