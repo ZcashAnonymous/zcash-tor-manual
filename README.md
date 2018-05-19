@@ -6,13 +6,15 @@ All contributions are made under The Unlicense. See the LICENSE file in this rep
 
 # Bounties
 
-There are two open bounties to solve issues in this repo:
+There are open bounties to solve issues in this repo:
+
+- https://github.com/durbanpoison/zcash-tor/issues/5
 
 - https://github.com/durbanpoison/zcash-tor/issues/4
 
 - https://github.com/durbanpoison/zcash-tor/issues/3
 
-Note: Bounties will only be paid out to z-addresses.
+**Note: Bounties will only be paid out to z-addresses.**
 
 # Installing and running Zcash over Tor on a Debian server.
 
