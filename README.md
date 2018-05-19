@@ -4,6 +4,14 @@ Open an issue to report an error and submit a pull request to close an open issu
 
 All contributions are made under The Unlicense. See the LICENSE file in this repository.
 
+# Bounties
+
+There are two open bounties to solve issues in this repo:
+
+- https://github.com/durbanpoison/zcash-tor/issues/4
+
+- https://github.com/durbanpoison/zcash-tor/issues/3
+
 # Installing and running Zcash over Tor on a Debian server.
 
 Open Terminal, SSH into your Debian server, and follow these instructions.
