@@ -8,9 +8,9 @@ All contributions are made under The Unlicense. See the LICENSE file in this rep
 
 There are open bounties to solve issues in this repo:
 
-- https://github.com/durbanpoison/zcash-tor/issues/5
+- https://github.com/durbanpoison/zcash-tor/issues/6
 
-- https://github.com/durbanpoison/zcash-tor/issues/4
+- https://github.com/durbanpoison/zcash-tor/issues/5
 
 - https://github.com/durbanpoison/zcash-tor/issues/3
 
@@ -36,7 +36,7 @@ Enter the following commands:
 
 `sudo apt-get update`
 
-`sudo apt-get install tor`
+`sudo apt-get install tor tor-geoipdb`
 
 `sudo service tor stop`
 
@@ -63,7 +63,7 @@ Press and hold `CTRL+K` to delete the existing content until the file is blank t
 > ExitPolicy reject *:*  
 > DisableDebuggerAttachment 0  
 
-`CTRL+X` then `Y` then `Enter`
+Press `CTRL+X` then `Y` then `Enter` to save and exit.
 
 Start Tor.
 
@@ -77,41 +77,79 @@ You can navigate nyx with your arrow keys. Pressing `M` will show the menu. `Q` 
 
 **Install and run Zcash**
 
-Open a new Tab in Terminal then SSH into your server in the new Tab and enter the following commands:
+Open a new Tab in Terminal then SSH into your server in the new Tab.
 
 --
 
 **TODO: INSTRUCTIONS FOR INSTALLING OVER TOR**
 
-Need easier step-by-step instructions for doing this:
+Configure wget to connect over Tor.
 
-> The repository is also accessible via Tor, after installing the apt-transport-tor package, at the address zcaptnv5ljsxpnjt.onion. Use the following pattern in your sources.list file: deb [arch=amd64] tor+http://zcaptnv5ljsxpnjt.onion/ jessie main
+Download and install Privoxy.
 
-From: https://github.com/zcash/zcash/wiki/Debian-binary-packages
+`sudo apt-get install -y tor-geoipdb privoxy`
 
-**WIP, needs review:**
+Open the wget configuration file:
 
-`sudo apt-get install apt-transport-tor`
+`sudo nano /etc/wgetrc`
 
-`echo "deb [arch=amd64] tor+http://zcaptnv5ljsxpnjt.onion/ jessie main" | sudo tee /etc/apt/sources.list.d/zcash.list`
+Find lines starting with: 
 
-`sudo apt-get update && sudo apt-get install zcash`
+> #https_proxy =
+> #http_proxy =
 
-*Question: After completing the above steps, are the params also fetched over Tor?*
+Replace both lines (including #) with: 
 
-`zcash-fetch-params`
+> https_proxy = https://localhost:8118
+> http_proxy = http://localhost:8118
 
---
+Press `CTRL+X` then `Y` then `Enter` to save and exit.
 
-**TODO: Remove HTTPS instructions after finishing the Tor instructions above**
+Open the Privoxy configuration file.
 
-`sudo apt-get install apt-transport-https`
+`sudo nano /etc/Privoxy`
+
+Add these lines to the file so Privoxy will take traffic from wget and send it through Tor.
+
+> listen-address localhost:8118
+> forward-socks5 / 127.0.0.1:9050
+
+Press `CTRL+X` then `Y` then `Enter` to save and exit.
+
+Run a test to ensure that wget is connecting over Tor. As a test we will try to download wget from gnu.org.
+
+`wget http://ftp.gnu.org/gnu/wget/wget-1.15.tar.gz`
+
+The console should show the message:
+
+> Resolving localhost... 127.0.0.1
+> Connecting to localhost|127.0.0.1|:8118... connected
+
+The `Resolving localhost...` and `Connecting to localhost...` messages will be evidence that wget is correctly fetching the parameters over Tor. If the console shows `Resolving ftp.gnu.org` and `Connecting to ftp.gnu.org` then the proxy isn't working. Double-check that the wget and Privoxy configuration files are correct by comparing what's shown on the console with the lines referenced above.
+
+Proceed when wget is confirmed to be connecting over Tor.
+
+Add the Zcash master signing key to apt's trusted keyring. This key will be used to verify the publisher's signature on the Zcash software.
 
 `wget -qO - https://apt.z.cash/zcash.asc | sudo apt-key add -`
 
-`echo "deb [arch=amd64] https://apt.z.cash/ jessie main" | sudo tee /etc/apt/sources.list.d/zcash.list`
+The fingerprint of the key is (F1E2 1403 7E94 E950 BA85 77B2 63C4 A216 9C1B 2FA2)[https://github.com/zcash/zcash/wiki/Debian-binary-packages].
+
+Install a tool that will enable downloading and updating software from apt over Tor.
+
+`sudo apt-get install apt-transport-tor`
+
+Add the official Zcash Tor apt repo to the list of Zcash installation sources.
+
+`echo "deb [arch=amd64] tor+http://zcaptnv5ljsxpnjt.onion/ jessie main" | sudo tee /etc/apt/sources.list.d/zcash.list`
+
+Update apt sources and install Zcash.
 
 `sudo apt-get update && sudo apt-get install zcash`
+
+Download the Zcash parameters.
+
+`zcash-fetch-params`
 
 --
 
@@ -130,7 +168,7 @@ Delete any information in this file (it should be blank but if not, then delete 
 > rpcpassword=YOUR_RANDOM_RPCPASSWORD  
 > proxy=127.0.0.1:9050  
 > maxconnections=8  
-> addnode=mainnet.z.cash  
+> onlynet=onion  
 > addnode=zcashiqykswlzpsu.onion  
 > addnode=zcashqhrmju6zfhn.onion  
 > addnode=zcashgmvxwrmjsut.onion  
@@ -149,23 +187,41 @@ Delete any information in this file (it should be blank but if not, then delete 
 > addnode=zcash2iihed2wdux.onion  
 > addnode=w3dxku36wbp3lowx.onion  
 
-`CTRL+X` then `Y` then `Enter`
+Press `CTRL+X` then `Y` then `Enter` to save and exit.
 
 Run the following command to start the Zcash daemon:
 
 `zcashd`
 
-Wait until the blockchain is 100% synchronized, then you can begin using Zcash over Tor.
+Let zcashd run while the blockchain is synchronized.
+
+After the blockchain is 100% synchronized, press `CTRL+C` then `Enter` to exit. 
+
+Make sure that Zcash is connecting over Tor as exptected.
+
+`zcash-cli getpeerinfo`
+
+All peers should have a line that looks like:
+
+`"addr": "w3dxku36wbp3lowx.onion"`
+
+If any peers have a line that looks like:
+
+`"addr": "85.143.104.14:8233"`
+
+Then Zcash is not connecting over Tor properly. Double check the Tor and Zcash configuration files and compare against the versions shown above.
+
+Zcash can be used after it is confirmed to be connecting exclusively over Tor.
 
 Follow the Zcash 1.0 User Guide to begin using Zcash.
 
 https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
-*Question: Is there a way to check and make sure you're properly connecting over Tor so you don't accidentally shoot yourself in the foot?*
-
 **ACKNOWLEDGEMENTS**
 
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
+
+Thanks @l0sec for solving (Issue #4)[https://github.com/durbanpoison/zcash-tor/issues/4] and making other helpful suggestions.
 
 This guide borrows heavily from the following resources:
 
