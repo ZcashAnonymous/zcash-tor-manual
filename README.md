@@ -195,7 +195,7 @@ Run the following command to start the Zcash daemon:
 
 Let zcashd run while the blockchain is synchronized.
 
-After the blockchain is 100% synchronized, press `CTRL+C` then `Enter` to exit. 
+After the blockchain is 100% synchronized, open a new tab in Terminal and SSH into your server.
 
 Make sure that Zcash is connecting over Tor as expected.
 
