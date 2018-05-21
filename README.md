@@ -197,7 +197,7 @@ Let zcashd run while the blockchain is synchronized.
 
 After the blockchain is 100% synchronized, press `CTRL+C` then `Enter` to exit. 
 
-Make sure that Zcash is connecting over Tor as exptected.
+Make sure that Zcash is connecting over Tor as expected.
 
 `zcash-cli getpeerinfo`
 
