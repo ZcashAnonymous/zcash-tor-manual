@@ -8,8 +8,8 @@ if curl --socks5-hostname localhost:9050 https://check.torproject.org 2>&1 | gre
   echo -e "\e[31mFailed to connect to Tor. No Zcash systems have been accessed.\e[0m"
   exit 1 
 fi
-zcashd &
-# Continuously verify only TOR connections.
+zcashd -onlynet=onion &
+# Continuously verify only TOR connections just in case.
 while true; do
   sleep 3  
   if zcash-cli getpeerinfo | grep addr | grep -v ".onion"; then
