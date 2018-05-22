@@ -1,0 +1,1 @@
+zcash-cli getpeerinfo
