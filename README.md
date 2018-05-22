@@ -6,7 +6,7 @@ All contributions are made under The Unlicense. See the LICENSE file in this rep
 
 # Project goal
 
-The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, updating, and using Zcash software.
+The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, updating, and using a Zcash full node on a Debian server.
 
 # Bounties
 
