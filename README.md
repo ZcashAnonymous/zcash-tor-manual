@@ -42,7 +42,7 @@ Update apt again.
 
 Install Tor.
 
-`sudo apt-get install tor tor-geoipdb`
+`sudo apt-get install tor`
 
 Make sure Tor is not running.
 
