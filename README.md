@@ -20,23 +20,35 @@ Open Terminal, SSH into your Debian server, and follow these instructions.
 
 ### Install and run Tor + nyx
 
-Enter the following commands:
+Make sure your existing software is up to date.
 
 `sudo apt-get update`
 
 `sudo apt-get dist-upgrade`
 
+Add the Tor package repo to your apt sources.
+
 `echo 'deb http://deb.torproject.org/torproject.org trusty main' | sudo tee -a /etc/apt/sources.list.d/torproject.list`
+
+Download the Tor signing key and add it to apt's trusted keyring. This key will be used to verify the publisher's signature on the Tor software.
 
 `gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89`
 
 `gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -`
 
+Update apt again.
+
 `sudo apt-get update`
+
+Install Tor.
 
 `sudo apt-get install tor tor-geoipdb`
 
+Make sure Tor is not running.
+
 `sudo service tor stop`
+
+Tor developers also provide a keyring to download here.
 
 `sudo apt-get install deb.torproject.org-keyring`
 
@@ -123,17 +135,17 @@ The console should show the message:
 > Resolving localhost... 127.0.0.1
 > Connecting to localhost|127.0.0.1|:8118... connected
 
-The `Resolving localhost...` and `Connecting to localhost...` messages will be evidence that wget is correctly fetching the parameters over Tor. If the console shows `Resolving ftp.gnu.org` and `Connecting to ftp.gnu.org` then the proxy isn't working. Double-check that the wget and Privoxy configuration files are correct by comparing what's shown on the console with the lines referenced above.
+The `Resolving localhost...` and `Connecting to localhost...` messages will be evidence that wget is correctly connecting over Tor. If the console shows `Resolving ftp.gnu.org...` and `Connecting to ftp.gnu.org...` then the proxy isn't working. Double-check that the wget and Privoxy configuration files are correct by comparing what's shown on the console with the lines referenced above.
 
 Proceed when wget is confirmed to be connecting over Tor.
 
-Add the Zcash master signing key to apt's trusted keyring. This key will be used to verify the publisher's signature on the Zcash software.
+Download the Zcash signing key and add it to apt's trusted keyring. This key will be used to verify the publisher's signature on the Zcash software.
 
 `wget -qO - https://apt.z.cash/zcash.asc | sudo apt-key add -`
 
 The fingerprint of the key is (F1E2 1403 7E94 E950 BA85 77B2 63C4 A216 9C1B 2FA2)[https://github.com/zcash/zcash/wiki/Debian-binary-packages].
 
-Install a tool that will enable downloading and updating software from apt over Tor.
+Install a tool that will enable downloading and updating software from apt package repositories over Tor.
 
 `sudo apt-get install apt-transport-tor`
 
