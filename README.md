@@ -16,7 +16,7 @@ There are open bounties to solve issues in this repo:
 
 Open Terminal, SSH into your Debian server, and follow these instructions.
 
-**Install and run Tor + nyx**
+### Install and run Tor + nyx
 
 Enter the following commands:
 
@@ -71,7 +71,7 @@ Start nyx.
 
 You can navigate nyx with your arrow keys. Pressing `M` will show the menu. `Q` to quit. `R` to reconnect. Note that Tor can also be stopped or restarted via the nyx menu.
 
-**Install and run Zcash**
+### Install and run Zcash
 
 Open a new Tab in Terminal then SSH into your server in the new Tab.
 
@@ -209,11 +209,13 @@ Then Zcash is not connecting over Tor properly. Double check the Tor and Zcash c
 
 Zcash can be used after it is confirmed to be connecting exclusively over Tor.
 
+### Start using Zcash over Tor
+
 Follow the Zcash 1.0 User Guide to begin using Zcash.
 
 https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
-**ACKNOWLEDGEMENTS**
+# Acknowledgements
 
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
 
