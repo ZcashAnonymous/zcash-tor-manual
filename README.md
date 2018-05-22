@@ -233,7 +233,7 @@ https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
 
-Thanks @l0sec for solving (Issue #4)[https://github.com/durbanpoison/zcash-tor/issues/4] and making other helpful suggestions.
+Thanks @l0sec for solving [Issue #4](https://github.com/durbanpoison/zcash-tor/issues/4) and making other helpful suggestions.
 
 This guide borrows heavily from the following resources:
 
