@@ -51,14 +51,11 @@ sudo apt-get install zcash --force-yes
 
 # Set the zcash configuration
 mkdir ~/.zcash
-# TODO(Chase) Get /dev/urandom for RPC username and passwords
 echo "listen=0
 server=1
 port=8233
 rpcport=8232
 rpcallowip=127.0.0.1
-rpcuser=YOUR_RANDOM_RPCUSER
-rpcpassword=YOUR_RANDOM_RPCPASSWORD
 proxy=127.0.0.1:9050
 maxconnections=8
 onlynet=onion
@@ -79,6 +76,14 @@ addnode=zcashuyvk5e7qfzy.onion
 addnode=fhsxfrwpyrtoxeal.onion
 addnode=zcash2iihed2wdux.onion
 addnode=w3dxku36wbp3lowx.onion" > ~/.zcash/zcash.conf
+
+# Add random username and passwords.
+# Not super clean but it works.
+printf "rpcuser=" >> ~/.zcash/zcash.conf
+xxd -l 16 -p /dev/random >> ~/.zcash/zcash.conf
+echo "" >>  ~/.zcash/zcash.conf
+printf "rpcpassword=" >> ~/.zcash/zcash.conf
+xxd -l 16 -p /dev/random >> ~/.zcash/zcash.conf
 
 
 # Fetch Zcash params 
