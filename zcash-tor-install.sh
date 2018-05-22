@@ -31,9 +31,6 @@ LongLivedPorts 21,22,706,1863,5050,5190,5222,5223,6523,6667,6697,8300,8233
 ExitPolicy reject *:*
 DisableDebuggerAttachment 0" > /etc/tor/torrc 
 
-# # Download privoxy.
-# sudo apt-get install -y tor-geoipdb privoxy --force-yes
-
 sudo service tor start
 # Assert Tor is running
 if curl --socks5-hostname localhost:9050 https://check.torproject.org 2>&1 | grep 'Sorry\|Connection refused'; then
