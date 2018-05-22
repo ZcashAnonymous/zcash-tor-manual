@@ -5,12 +5,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Download Tor.
-sudo apt-get update
+sudo apt-get update --force-yes
 sudo apt-get dist-upgrade --force-yes
 echo 'deb http://deb.torproject.org/torproject.org trusty main' | sudo tee -a /etc/apt/sources.list.d/torproject.list
 gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-sudo apt-get update
+sudo apt-get update --force-yes
 sudo apt-get install tor --force-yes
 sudo service tor stop
 sudo apt-get install deb.torproject.org-keyring --force-yes
@@ -212,4 +212,4 @@ main ${1:-}
 rm -f /tmp/fetch_params.lock
 
 
-echo "\e[32Installation is complete!\e[0m"
+echo -e "\e[32mInstallation is complete. Run ./zcashd-tor.sh to start your node. \e[0m"

@@ -4,9 +4,13 @@ if curl --socks5-hostname localhost:9050 https://check.torproject.org 2>&1 | gre
   exit 1 
 fi
 zcashd &
-if zcash-cli getpeerinfo | grep addr | grep -v ".onion"; then
-  echo -e "\e[31mWARNNG!!! YOU ARE NOT RUNNING 'zcashd' OVER TOR!!!\e[0m"
-  echo -e "\e[31mPlease verify your zcash.conf file.\e[0m"
-  killall zcashd
-  exit 1
-fi
+# Continuously verify only TOR connections.
+while true; do
+  sleep 3  
+  if zcash-cli getpeerinfo | grep addr | grep -v ".onion"; then
+    killall zcashd
+    echo -e "\e[31m!!!YOU HAVE CONNECTED TO A NON-TOR NODE!!!\e[0m"
+    echo -e "\e[31mPlease verify your zcash.conf file. Zcashd has been killed\e[0m"
+    exit 1
+  fi
+done
