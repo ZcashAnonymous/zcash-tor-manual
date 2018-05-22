@@ -4,6 +4,10 @@ Open an issue to report an error and submit a pull request to close an open issu
 
 All contributions are made under The Unlicense. See the LICENSE file in this repository.
 
+# Project goal
+
+The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, updating, and using Zcash software.
+
 # Bounties
 
 Check for open bounties to solve issues in this repo:
@@ -230,6 +234,8 @@ Follow the Zcash 1.0 User Guide to begin using Zcash.
 https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
 # Acknowledgements
+
+Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' privacy.
 
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
 
