@@ -201,7 +201,25 @@ integrity with sha256sum.
 
 If they already exist locally, it will exit now and do nothing else.
 EOF
-
+# Now create PARAMS_DIR and insert a README if necessary:
+    if ! [ -d "$PARAMS_DIR" ]
+    then
+        mkdir -p "$PARAMS_DIR"
+        README_PATH="$PARAMS_DIR/README"
+        cat >> "$README_PATH" <<EOF
+This directory stores common Zcash zkSNARK parameters. Note that it is
+distinct from the daemon's -datadir argument because the parameters are
+large and may be shared across multiple distinct -datadir's such as when
+setting up test networks.
+EOF
+       cat <<EOF
+The parameters are currently just under 911MB in size, so plan accordingly
+for your bandwidth constraints. If the files are already present and
+have the correct sha256sum, no networking is used.
+Creating params directory. For details about this directory, see:
+$README_PATH
+EOF
+    fi
     cd "$PARAMS_DIR"
 
     fetch_params "$SPROUT_PKEY_NAME" "$PARAMS_DIR/$SPROUT_PKEY_NAME" "8bc20a7f013b2b58970cddd2e7ea028975c88ae7ceb9259a5344a16bc2c0eef7"

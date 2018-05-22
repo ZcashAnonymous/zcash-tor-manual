@@ -1,3 +1,8 @@
+function sig_handle {
+  killall zcashd
+  exit 1
+}
+trap sig_handle SIGTERM
 service tor start
 if curl --socks5-hostname localhost:9050 https://check.torproject.org 2>&1 | grep 'Sorry\|Connection refused'; then
   echo -e "\e[31mFailed to connect to Tor. No Zcash systems have been accessed.\e[0m"
