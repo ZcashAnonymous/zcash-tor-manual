@@ -105,13 +105,13 @@ Open the wget configuration file:
 
 Find lines starting with: 
 
-> #https_proxy =
-> #http_proxy =
+> #https_proxy =  
+> #http_proxy =  
 
 Replace both lines (including #) with: 
 
-> https_proxy = https://localhost:8118
-> http_proxy = http://localhost:8118
+> https_proxy = https://localhost:8118  
+> http_proxy = http://localhost:8118  
 
 Press `CTRL+X` then `Y` then `Enter` to save and exit.
 
@@ -121,8 +121,8 @@ Open the Privoxy configuration file.
 
 Add these lines to the file so Privoxy will take traffic from wget and send it through Tor.
 
-> listen-address localhost:8118
-> forward-socks5 / 127.0.0.1:9050
+> listen-address localhost:8118  
+> forward-socks5 / 127.0.0.1:9050  
 
 Press `CTRL+X` then `Y` then `Enter` to save and exit.
 
@@ -132,8 +132,8 @@ Run a test to ensure that wget is connecting over Tor. As a test we will try to 
 
 The console should show the message:
 
-> Resolving localhost... 127.0.0.1
-> Connecting to localhost|127.0.0.1|:8118... connected
+> Resolving localhost... 127.0.0.1  
+> Connecting to localhost|127.0.0.1|:8118... connected  
 
 The `Resolving localhost...` and `Connecting to localhost...` messages will be evidence that wget is correctly connecting over Tor. If the console shows `Resolving ftp.gnu.org...` and `Connecting to ftp.gnu.org...` then the proxy isn't working. Double-check that the wget and Privoxy configuration files are correct by comparing what's shown on the console with the lines referenced above.
 
@@ -213,17 +213,17 @@ Make sure that Zcash is connecting over Tor as expected.
 
 All peers should have a line that looks like:
 
-`"addr": "w3dxku36wbp3lowx.onion"`
+> "addr": "w3dxku36wbp3lowx.onion"  
 
 If any peers have a line that looks like:
 
-`"addr": "85.143.104.14:8233"`
+> "addr": "85.143.104.14:8233"  
 
 Then Zcash is not connecting over Tor properly. Double check the Tor and Zcash configuration files and compare against the versions shown above.
 
 Zcash can be used after it is confirmed to be connecting exclusively over Tor.
 
-### Start using Zcash over Tor
+### The moment you've been waiting for: Using Zcash
 
 Follow the Zcash 1.0 User Guide to begin using Zcash.
 
