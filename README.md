@@ -6,9 +6,9 @@ All contributions are made under The Unlicense. See the LICENSE file in this rep
 
 # Bounties
 
-There are open bounties to solve issues in this repo:
+Check for open bounties to solve issues in this repo:
 
-- https://github.com/durbanpoison/zcash-tor/issues/5
+- https://github.com/durbanpoison/zcash-tor/labels/bounty
 
 **Note: Bounties will only be paid out to z-addresses.**
 
