@@ -14,6 +14,8 @@ There are open bounties to solve issues in this repo:
 
 # Installing and running Zcash over Tor on a Debian server.
 
+**This is still a work in progress. I do not suggest using it unless you’re willing to do some research to make sure it’s working properly.**
+
 Open Terminal, SSH into your Debian server, and follow these instructions.
 
 ### Install and run Tor + nyx
