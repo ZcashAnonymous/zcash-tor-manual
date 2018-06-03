@@ -4,11 +4,15 @@ Open an issue to report an error and submit a pull request to close an open issu
 
 All contributions are made under The Unlicense. See the LICENSE file in this repository.
 
-# Project goal
+## Forum thread
+
+https://forum.z.cash/t/bounty-new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/29097/5
+
+## Project goal
 
 The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, updating, and using a Zcash full node (zcashd) on a Debian server.
 
-# Bounties
+## Bounties
 
 Check for open bounties to solve issues in this repo:
 
@@ -16,7 +20,7 @@ Check for open bounties to solve issues in this repo:
 
 **Note: Bounties will only be paid out to z-addresses.**
 
-# Installing and running Zcash over Tor on a Debian server.
+## Installing and running Zcash over Tor on a Debian server.
 
 **This is still a work in progress. I do not suggest using it unless you’re willing to do some research to make sure it’s working properly.**
 
@@ -233,7 +237,7 @@ Follow the Zcash 1.0 User Guide to begin using Zcash.
 
 https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
-# Acknowledgements
+## Acknowledgements
 
 Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' privacy.
 
