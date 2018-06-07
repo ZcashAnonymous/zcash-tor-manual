@@ -4,37 +4,10 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# Download Tor.
-sudo apt-get update --force-yes
-sudo apt-get dist-upgrade --force-yes
-echo 'deb http://deb.torproject.org/torproject.org trusty main' | sudo tee -a /etc/apt/sources.list.d/torproject.list
-gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
-gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-sudo apt-get update --force-yes
-sudo apt-get install tor --force-yes
-sudo service tor stop
-sudo apt-get install deb.torproject.org-keyring --force-yes
-sudo apt-get install apt-transport-tor --force-yes
-
-# Install nyx
-sudo apt-get install tor-geoipdb apparmor-utils torsocks --force-yes
-
-# Set the Tor configuration. 
-sudo echo "ClientOnly 1
-SOCKSPort 9050
-SOCKSPolicy accept 127.0.0.1/8
-Log notice file /var/log/tor/notices.log
-ControlPort 9051
-HiddenServiceStatistics 0
-ORPort 9001
-LongLivedPorts 21,22,706,1863,5050,5190,5222,5223,6523,6667,6697,8300,8233
-ExitPolicy reject *:*
-DisableDebuggerAttachment 0" > /etc/tor/torrc 
-
-sudo service tor start
 # Assert Tor is running
 if curl --socks5-hostname localhost:9050 https://check.torproject.org 2>&1 | grep 'Sorry\|Connection refused'; then
   echo -e "\e[31mFailed to connect to Tor. No Zcash systems have been accessed.\e[0m"
+  echo -e "\e[31Please assert tor service is active by running 'sudo service tor start'" 
   exit 1 
 fi
 
@@ -168,34 +141,7 @@ EOF
     fi
 }
 
-# Use flock to prevent parallel execution.
-function lock() {
-    local lockfile=/tmp/fetch_params.lock
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        if shlock -f ${lockfile} -p $$; then
-            return 0
-        else
-            return 1
-        fi
-    else
-        # create lock file
-        eval "exec 200>/$lockfile"
-        # acquire the lock
-        flock -n 200 \
-            && return 0 \
-            || return 1
-    fi
-}
-
-function exit_locked_error {
-    echo "Only one instance of fetch-params.sh can be run at a time." >&2
-    exit 1
-}
-
 function main() {
-
-    lock fetch-params.sh \
-    || exit_locked_error
 
     cat <<EOF
 Fetching the Zcash zkSNARK parameters over Tor and verify their
@@ -229,7 +175,5 @@ EOF
 }
 
 main ${1:-}
-rm -f /tmp/fetch_params.lock
-
 
 echo -e "\e[32mInstallation is complete. Run ./zcashd-tor.sh to start your node. \e[0m"
