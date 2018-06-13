@@ -27,7 +27,7 @@ port=8233
 rpcport=8232
 rpcallowip=127.0.0.1
 proxy=127.0.0.1:9050
-maxconnections=8
+maxconnections=100
 onlynet=onion" > ~/.zcash/zcash.conf
 
 # Add random username and passwords.
