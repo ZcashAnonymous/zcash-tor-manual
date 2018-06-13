@@ -28,24 +28,7 @@ rpcport=8232
 rpcallowip=127.0.0.1
 proxy=127.0.0.1:9050
 maxconnections=8
-onlynet=onion
-addnode=zcashiqykswlzpsu.onion
-addnode=zcashqhrmju6zfhn.onion
-addnode=zcashgmvxwrmjsut.onion
-addnode=zcashz3uma65ix7b.onion
-addnode=zcashiyf4kxluf3x.onion
-addnode=zcashwfe4x3jkz2b.onion
-addnode=zcashvkeki52iqpc.onion
-addnode=zcasha3cmfrpy7b7.onion
-addnode=zcashz7ed3nvbdxm.onion
-addnode=zcash5adwfpxfuvf.onion
-addnode=zcashixg5ol2ndo4.onion
-addnode=zcashuzwa365oh3n.onion
-addnode=zcashskbeoiwtym3.onion
-addnode=zcashuyvk5e7qfzy.onion
-addnode=fhsxfrwpyrtoxeal.onion
-addnode=zcash2iihed2wdux.onion
-addnode=w3dxku36wbp3lowx.onion" > ~/.zcash/zcash.conf
+onlynet=onion" > ~/.zcash/zcash.conf
 
 # Add random username and passwords.
 # Not super clean but it works.
