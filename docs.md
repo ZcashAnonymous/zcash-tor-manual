@@ -8,7 +8,7 @@ Yes! But the privacy of your transactions could possibly be compromised by an at
 
 
 ## How to install
-First, you'll need to install all of the nessisary tor packages. This will be done through the normal web, so your IP will be exposed here.
+First, you'll need to install all of the necessary tor packages. This will be done through the normal web, so your IP will be exposed here.
 
 ```bash
 sudo ./install-tor.sh
