@@ -1,4 +1,4 @@
-# Zcash <3 Tor Install scripts.
+# Zcash <3 Tor Install Scripts.
 
 ## What is this?
 This is a way to privately install and run zcash.
@@ -7,9 +7,18 @@ This is a way to privately install and run zcash.
 Yes! But the privacy of your transactions could possibly be compromised by an attacker knowing your IP address. By having the entire zcash ecosystem accessed exclusively through Tor, you increase your level of privacy. This will also install zcash through tor, helping keep private the fact that you use zcash at all.
 
 
-## How to install
-First, you'll need to install all of the necessary tor packages. This will be done through the normal web, so your IP will be exposed here.
+## How to privately download
+If you are viewing this page on a normal browser, then you IP has already been leaked to github. ¯\\\_(ツ)_/¯
 
+If you still want to try to be more private, then there are a few ways to get this script over tor.
+#### Easiest way:
+Download a zip of this code from the [Tor Browser Bundle ](https://www.torproject.org/projects/torbrowser.html).
+
+
+## How to install
+First, you'll need to install all of the necessary tor packages. This will be done through the normal web, so your IP will be exposed here. That's ok though, as nothing in this script touches anything related to Zcash. 
+
+To be able to run these commands, you must have your 
 ```bash
 sudo ./install-tor.sh
 ```
