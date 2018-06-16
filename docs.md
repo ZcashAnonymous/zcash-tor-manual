@@ -29,7 +29,7 @@ cd zcash-tor-master
 ## How to install
 First, you'll need to install all of the necessary tor packages. This will be done through the normal web, so your IP will be exposed here. That's ok though, as nothing in this script touches anything related to Zcash. 
 
-To be able to run these commands, you must have your 
+To be able to run these commands, your terminal must be in the same directory as these scripts.
 ```bash
 sudo ./install-tor.sh
 ```
