@@ -12,8 +12,19 @@ If you are viewing this page on a normal browser, then you IP has already been l
 
 If you still want to try to be more private, then there are a few ways to get this script over tor.
 #### Easiest way:
-Download a zip of this code from the [Tor Browser Bundle ](https://www.torproject.org/projects/torbrowser.html).
+First, you'll need the [Tor Browser Bundle ](https://www.torproject.org/projects/torbrowser.html).
+Once that is installed, come back to this page using the tor browser. Go to the main page of this repository, click on "Clone or download", then click on "Download as zip." Unzip the file, and open its directory. Right click anywhere on that window and select "Open in terminal". Keep the terminal open, as you will need it for the 'How to install' part.
 
+#### Fancy way:
+If you don't have access to a browser (say you are on a cloud machine), then you'll need to do some extra steps in order to ensure your privacy. If you are taking this path, I'll assume you already know how to use bash commands. 
+
+```bash
+sudo apt-get install torsocks
+service tor restart
+torsocks wget https://github.com/durbanpoison/zcash-tor/archive/master.zip
+unzip master.zip
+cd zcash-tor-master
+```
 
 ## How to install
 First, you'll need to install all of the necessary tor packages. This will be done through the normal web, so your IP will be exposed here. That's ok though, as nothing in this script touches anything related to Zcash. 
@@ -25,7 +36,7 @@ sudo ./install-tor.sh
 Next, we turn on the tor service and install zcash. This will assure us that all zcash software and parameters are only accessed through tor. 
  
  ```bash
- sudo service tor start
+ sudo service tor restart
  sudo ./zcash-tor-install.sh
  ```
  
