@@ -18,9 +18,22 @@ Once that is installed, come back to this page using the tor browser. Go to the 
 #### Fancy way:
 If you don't have access to a browser (say you are on a cloud machine), then you'll need to do some extra steps in order to ensure your privacy. If you are taking this path, I'll assume you already know how to use bash commands. 
 
+First, let's get the basic version of tor installed and running.
 ```bash
 sudo apt-get install torsocks
 service tor restart
+```
+Next, let's verify that wget is running through Tor. 
+
+```bash
+torsocks wget -qO- https://check.torproject.org/ | grep "Congratulations|Sorry"
+```
+You should see  "Congratulations. This browser is configured to use Tor." if everything is working properly. If you get an error or "Sorry" message, then try reinstalling or restarting the Tor service.
+
+
+Once you are ready, go ahead and download this script over Tor. 
+
+```bash
 torsocks wget https://github.com/durbanpoison/zcash-tor/archive/master.zip
 unzip master.zip
 cd zcash-tor-master
