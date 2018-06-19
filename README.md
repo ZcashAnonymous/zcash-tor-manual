@@ -246,6 +246,8 @@ https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
 Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' privacy.
 
+Thanks [Zcash](https://z.cash) for building software that helps protect internet users' financial privacy.
+
 Thanks for @str4d in the Zcash community chat for answering some of my questions during the production of this guide.
 
 Thanks @l0sec for solving [Issue #4](https://github.com/durbanpoison/zcash-tor/issues/4) and making other helpful suggestions.
