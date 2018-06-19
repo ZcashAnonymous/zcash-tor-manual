@@ -28,8 +28,8 @@ You can also add and fund your own bounties. Just add the amount of the bounty t
 
 ## Installing and running Zcash over Tor on a Debian server.
 
-**NEW: Install automatically** 
-Follow the instructions [here](https://github.com/durbanpoison/zcash-tor/blob/master/docs.md) to use the open source scripts located in this repo to automate most of the process detailed below -- this could save you a lot of time!
+**NEW: Install automatically**  
+Follow the instructions [here](https://github.com/durbanpoison/zcash-tor/blob/master/docs.md) to use the open source scripts located in this repo to automate most of the process detailed below. This could save you a lot of time!
 
 **Install manually**
 
