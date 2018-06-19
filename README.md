@@ -250,6 +250,8 @@ Thanks for @str4d in the Zcash community chat for answering some of my questions
 
 Thanks @l0sec for solving [Issue #4](https://github.com/durbanpoison/zcash-tor/issues/4) and making other helpful suggestions.
 
+Thanks to @Thenerdstation for solving [Issue #5](https://github.com/durbanpoison/zcash-tor/issues/5) and to both @ConnorFoody and @jfeldis for reviewing the related [Pull Request #8](https://github.com/durbanpoison/zcash-tor/pull/8).
+
 This guide borrows heavily from the following resources:
 
 https://github.com/zcash/zcash/wiki/Debian-binary-packages
