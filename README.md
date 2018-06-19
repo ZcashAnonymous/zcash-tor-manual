@@ -6,7 +6,7 @@ All contributions are made under The Unlicense. See the LICENSE file in this rep
 
 ## Forum thread
 
-https://forum.z.cash/t/bounty-new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/29097/5
+https://forum.z.cash/t/new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/
 
 ## Project goal
 
