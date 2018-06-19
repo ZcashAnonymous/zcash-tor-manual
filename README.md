@@ -244,7 +244,7 @@ https://github.com/zcash/zcash/wiki/1.0-User-Guide
 
 ## Acknowledgements
 
-Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' privacy.
+Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' network privacy.
 
 Thanks [Zcash](https://z.cash) for building software that helps protect internet users' financial privacy.
 
