@@ -7,7 +7,7 @@ This is a way to privately install and run a Zcash full node.
 Yes! But the privacy of your transactions could possibly be compromised by an attacker knowing your IP address. By having the entire Zcash ecosystem accessed exclusively through Tor, you increase your level of privacy. This will also install Zcash through Tor, helping to keep private the fact that you use Zcash at all.
 
 ## How to privately download
-If you are viewing this page on a normal browser, then your IP has already been leaked to GitHub. ¯\_(ツ)_/¯
+If you are viewing this page on a normal browser, then your IP has already been leaked to GitHub. ¯\\\_(ツ)_/¯
 
 If you still want to try to be more private, then there are two ways we recommend to get this script over Tor.
 
