@@ -174,8 +174,6 @@ Download the Zcash parameters.
 
 `zcash-fetch-params`
 
---
-
 `mkdir ~/.zcash`
 
 `sudo nano ~/.zcash/zcash.conf`
