@@ -10,7 +10,7 @@ https://forum.z.cash/t/new-guide-zcash-3-tor-installing-running-and-updating-zca
 
 ## Project goal
 
-The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, updating, and using a Zcash full node (zcashd) on a Debian server.
+The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, running, and updating a Zcash full node (zcashd) on a Debian server.
 
 ## Bounties
 
