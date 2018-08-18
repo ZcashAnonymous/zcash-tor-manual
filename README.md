@@ -240,6 +240,30 @@ Follow the Zcash User Guide to begin using Zcash.
 
 https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/user_guide.html#usage
 
+### Updating Zcash
+
+You should keep your software up to date to fix bugs, close security holes, and stay in sync with the Zcash network. To update your software, enter these commands:
+
+`zcash-cli stop`
+
+Wait a minute for zcashd to completely stop.
+
+`sudo service tor stop`
+
+`sudo apt-get update -y`
+
+`sudo apt-get upgrade -y`
+
+`sudo shutdown –r now`
+
+Wait two minutes then SSH back into your server and enter these commands:
+
+`sudo service tor start`
+
+`zcashd`
+
+Your Zcash node should start and run over Tor as expected. After giving the node time to sync the blockchain, you can begin using your Zcash node again.
+
 ## Acknowledgements
 
 Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' network privacy.
