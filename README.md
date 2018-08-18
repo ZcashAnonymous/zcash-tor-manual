@@ -236,9 +236,9 @@ Zcash can be used after it is confirmed to be connecting exclusively over Tor.
 
 ### The moment you've been waiting for: Using Zcash
 
-Follow the Zcash 1.0 User Guide to begin using Zcash.
+Follow the Zcash User Guide to begin using Zcash.
 
-https://github.com/zcash/zcash/wiki/1.0-User-Guide
+https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/user_guide.html#usage
 
 ## Acknowledgements
 
