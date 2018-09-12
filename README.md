@@ -264,7 +264,11 @@ Wait a minute then SSH back into your server and enter these commands:
 
 Your Zcash node should start and run over Tor as expected. After giving the node time to sync the blockchain, you can begin using your Zcash node again.
 
-## Contributing
+## Editor
+
+The editor of [this guide](https://github.com/ZcashAnonymous/zcash-tor) is [@durbanpoison](https://github.com/durbanpoison). To help improve this guide, see the [Contribute](#contribute) section below.
+
+## Contribute
 
 Open an issue to report an error or suggest a change and submit a pull request to close an open issue.
 
@@ -291,3 +295,9 @@ https://github.com/zcash/zcash/blob/master/doc/tor.md
 https://forum.z.cash/t/set-up-guide-for-running-zcash-on-tor-ubuntu-debian-linux-desktop/18748/2
 
 https://forum.z.cash/t/zcash-addnode-tor-hidden-service-onion/13007/3
+
+## License
+
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, [durbanpoison](https://github.com/durbanpoison) has waived all copyright and related or neighboring rights to this work.
