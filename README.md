@@ -1,35 +1,13 @@
 # zcash <3 tor
 
-Open an issue to report an error and submit a pull request to close an open issue.
+This guide contains instructions for using Tor to ensure that your IP address is not exposed to any Zcash-related services when installing, running, and updating a Zcash full node (zcashd) on a Debian server.
 
-All contributions are made under The Unlicense. See the LICENSE file in this repository.
-
-## Forum thread
-
-https://forum.z.cash/t/new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/
-
-## Project goal
-
-The goal of this project is to ensure that a user's IP address is not exposed to any Zcash-related services when installing, running, and updating a Zcash full node (zcashd) on a Debian server.
-
-## Bounties
-
-Check for open bounties to solve issues in this repo:
-
-- https://github.com/durbanpoison/zcash-tor/labels/bounty
-
-**Note: Bounties will only be paid out to z-addresses.**
-
-Total [bounties paid](https://github.com/durbanpoison/zcash-tor/issues?q=is%3Aissue+is%3Aclosed+label%3Abounty): 0.325 ZEC
-
-Contribute to the bounty fund: `zc9kJ1jZUnKRghsLC9cVoRAWFgCiU5Mq4V6gS8pGXSBBgS3hS9VmLRFawkhpiFEuFpAKbBoxnGWRNeXfJzHNbAWk7tUh2s4`
-
-You can also add and fund your own bounties. Just add the amount of the bounty to your issue and ask for the bounty label in a comment on your issue.
+Note: These instructions are intended for use with a Debian server that is running 24/7 but should work with a Debian desktop as well. If you use a Debian desktop Zcash node then make sure to shutdown the node safely before shutting down your desktop, and restart Tor and the Zcash node after restarting the desktop.
 
 ## Installing and running Zcash over Tor on a Debian server.
 
-**NEW: Install automatically**  
-Follow the instructions [here](https://github.com/durbanpoison/zcash-tor/blob/master/docs.md) to use the open source scripts located in this repo to automate most of the process detailed below. This could save you a lot of time!
+**Install automatically**  
+Follow the instructions [here](https://github.com/ZcashAnonymous/zcash-tor-auto/blob/master/README.md) to use open source scripts that automate most of the process detailed below. This could save you a lot of time!
 
 **Install manually**
 
@@ -40,6 +18,8 @@ Open Terminal, SSH into your Debian server, and follow these instructions.
 Make sure your existing software is up to date.
 
 `sudo apt-get update`
+
+`sudo apt-get upgrade`
 
 `sudo apt-get dist-upgrade`
 
@@ -77,7 +57,7 @@ Edit the Tor configuration file.
 
 `sudo nano /etc/tor/torrc`
 
-Press and hold `CTRL+K` to delete the existing content until the file is blank then copy+paste:
+Press and hold `CTRL+K` to delete the existing content until the file is blank then copy+paste the following into the file:
 
 > ClientOnly 1  
 > SOCKSPort 9050  
@@ -178,7 +158,7 @@ Download the Zcash parameters.
 
 `sudo nano ~/.zcash/zcash.conf`
 
-Delete any information in this file (it should be blank but if not, then delete everything) then copy+paste:
+Press and hold `CTRL+K` to delete the existing content (if any) until the file is blank then copy+paste the following into the file:
 
 > listen=0  
 > server=1  
@@ -246,7 +226,7 @@ You should keep your software up to date to fix bugs, close security holes, and 
 
 `zcash-cli stop`
 
-Wait a minute for zcashd to completely stop.
+Wait a minute for zcashd to completely stop then enter these commands:
 
 `sudo service tor stop`
 
@@ -254,15 +234,45 @@ Wait a minute for zcashd to completely stop.
 
 `sudo apt-get upgrade -y`
 
+`sudo apt-get dist-upgrade -y`
+
 `sudo shutdown –r now`
 
-Wait two minutes then SSH back into your server and enter these commands:
+Wait a minute then SSH back into your server and enter these commands:
 
 `sudo service tor start`
 
 `zcashd`
 
 Your Zcash node should start and run over Tor as expected. After giving the node time to sync the blockchain, you can begin using your Zcash node again.
+
+## Editor
+
+The editor of [this guide](https://github.com/ZcashAnonymous/zcash-tor) is [@durbanpoison](https://github.com/durbanpoison). To help improve this guide, see the [Contribute](#contribute) section below.
+
+## Forum thread
+
+https://forum.z.cash/t/new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/
+
+## Bounties
+
+Check for open bounties to solve issues in this repo:
+
+- https://github.com/durbanpoison/zcash-tor/labels/bounty
+
+**Note: Bounties will only be paid out to z-addresses.**
+
+Total [bounties paid](https://github.com/durbanpoison/zcash-tor/issues?q=is%3Aissue+is%3Aclosed+label%3Abounty): 0.325 ZEC
+
+Contribute to the bounty fund: `zc9kJ1jZUnKRghsLC9cVoRAWFgCiU5Mq4V6gS8pGXSBBgS3hS9VmLRFawkhpiFEuFpAKbBoxnGWRNeXfJzHNbAWk7tUh2s4`
+
+You can also add and fund your own bounties. Just add the amount of the bounty to your issue and ask for the bounty label in a comment on your issue.
+
+## Contribute
+
+Open an issue to report an error or suggest a change and submit a pull request to close an open issue.
+
+All contributions are made under the CC0 license. See the [LICENSE](https://github.com/ZcashAnonymous/zcash-tor/blob/master/LICENSE.md) file in this repository.
 
 ## Acknowledgements
 
@@ -285,3 +295,9 @@ https://github.com/zcash/zcash/blob/master/doc/tor.md
 https://forum.z.cash/t/set-up-guide-for-running-zcash-on-tor-ubuntu-debian-linux-desktop/18748/2
 
 https://forum.z.cash/t/zcash-addnode-tor-hidden-service-onion/13007/3
+
+## License
+
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, [durbanpoison](https://github.com/durbanpoison) has waived all copyright and related or neighboring rights to this work.
