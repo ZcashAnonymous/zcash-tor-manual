@@ -14,7 +14,8 @@ Note: These instructions are intended for use with a Debian server that is runni
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
-## Installing, running, and updating Zcash over Tor on a Debian server. [↩](#a1)
+## Installing, running, and updating Zcash over Tor on a Debian server.
+[↩](#a1)
 
 **Install automatically**  
 Follow the instructions [here](https://github.com/ZcashAnonymous/zcash-tor-auto/blob/master/README.md) to use open source scripts that automate most of the process detailed below. This could save you a lot of time!
@@ -256,7 +257,8 @@ Wait a minute then SSH back into your server and enter these commands:
 
 Your Zcash node should start and run over Tor as expected. After giving the node time to sync the blockchain, you can begin using your Zcash node again.
 
-## Editor [↩](#a1)
+## Editor
+[↩](#a1)
 
 The editor of [this guide](https://github.com/ZcashAnonymous/zcash-tor) is [@durbanpoison](https://github.com/durbanpoison). To help improve this guide, see the [Contribute](#contribute) section below.
 
