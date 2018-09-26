@@ -4,7 +4,7 @@ This guide contains instructions for using Tor to ensure that your IP address is
 
 Note: These instructions are intended for use with a Debian server that is running 24/7 but should work with a Debian desktop as well. If you use a Debian desktop Zcash node then make sure to shutdown the node safely before shutting down your desktop, and restart Tor and the Zcash node after restarting the desktop.
 
-## <sup id="a1">Table of Contents</sup>
+## Table of Contents<sup id="a1"></sup>
 
 - [Installing, running, and Zcash over Tor on a Debian server](#installing-running-and-updating-zcash-over-tor-on-a-debian-server)
 - [Editor](#editor)
