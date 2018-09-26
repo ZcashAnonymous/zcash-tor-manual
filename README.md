@@ -262,11 +262,13 @@ Your Zcash node should start and run over Tor as expected. After giving the node
 
 The editor of [this guide](https://github.com/ZcashAnonymous/zcash-tor) is [@durbanpoison](https://github.com/durbanpoison). To help improve this guide, see the [Contribute](#contribute) section below.
 
-## Forum thread [↩](#a1)
+## Forum thread
+[↩](#a1)
 
 https://forum.z.cash/t/new-guide-zcash-3-tor-installing-running-and-updating-zcash-over-tor-on-a-debian-server/
 
-## Bounties [↩](#a1)
+## Bounties
+[↩](#a1)
 
 Check for open bounties to solve issues in this repo:
 
@@ -280,13 +282,15 @@ Contribute to the bounty fund: `zc9kJ1jZUnKRghsLC9cVoRAWFgCiU5Mq4V6gS8pGXSBBgS3h
 
 You can also add and fund your own bounties. Just add the amount of the bounty to your issue and ask for the bounty label in a comment on your issue.
 
-## Contribute [↩](#a1)
+## Contribute
+[↩](#a1)
 
 Open an issue to report an error or suggest a change and submit a pull request to close an open issue.
 
 All contributions are made under the CC0 license. See the [LICENSE](https://github.com/ZcashAnonymous/zcash-tor/blob/master/LICENSE.md) file in this repository.
 
-## Acknowledgements [↩](#a1)
+## Acknowledgements
+[↩](#a1)
 
 Thanks [Tor Project](https://torproject.org) for building software that helps protect internet users' network privacy.
 
@@ -308,7 +312,8 @@ https://forum.z.cash/t/set-up-guide-for-running-zcash-on-tor-ubuntu-debian-linux
 
 https://forum.z.cash/t/zcash-addnode-tor-hidden-service-onion/13007/3
 
-## License [↩](#a1)
+## License
+[↩](#a1)
 
 [![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
